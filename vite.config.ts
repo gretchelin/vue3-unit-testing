@@ -11,4 +11,11 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
+  test: {
+    // setupFiles: ["./setupFiles/add-something-to-global.ts"],
+    coverage: {
+      reporter: ['lcov', 'text', 'json', 'html'],
+    },
+    reporters: ["junit"],
+  },
 });
